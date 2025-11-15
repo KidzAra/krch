@@ -13,4 +13,11 @@ public class ShortUrl {
 
     @Column(nullable = false, unique = true)
     private String shortCode;
+
+    public ShortUrl() {}
+
+    public ShortUrl(String originalUrl, String shortCode) {
+        this.originalUrl = originalUrl;
+        this.shortCode = shortCode;
+    }
 }

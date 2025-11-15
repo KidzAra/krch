@@ -8,6 +8,12 @@ import java.util.Random;
 @SpringBootApplication
 public class KrchApplication {
 
+    private final LinkRepository repo;
+
+    public KrchApplication(LinkRepository repo) {
+        this.repo = repo;
+    }
+
 	public static void main(String[] args) {
 		SpringApplication.run(KrchApplication.class, args);
 	}
@@ -23,7 +29,16 @@ public class KrchApplication {
        return sb.toString();
    }
 
-   void getUrl(String shortCode){
+
+   void addUrl(String originalUrl){
+        String shortCode = generateShortCode();
+        ShortUrl link = new ShortUrl(originalUrl, shortCode);
+        repo.save(link);
+   }
+
+
+
+    void getUrl(String shortCode){
 
    }
 
