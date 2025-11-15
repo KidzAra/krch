@@ -3,6 +3,8 @@ package com.kidz.krch;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.Random;
+
 @SpringBootApplication
 public class KrchApplication {
 
@@ -10,10 +12,20 @@ public class KrchApplication {
 		SpringApplication.run(KrchApplication.class, args);
 	}
 
+    private static final String CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz123456789";
+    private static final Random RANDOM = new Random();
+
    public static String generateShortCode (){
-
-
-        return null;
+       StringBuilder sb = new StringBuilder(6);
+       for (int i = 0; i < 6; i++) {
+           sb.append(CHARS.charAt(RANDOM.nextInt(CHARS.length())));
+       }
+       return sb.toString();
    }
+
+   void getUrl(String shortCode){
+
+   }
+
 
 }
