@@ -9,10 +9,18 @@ public class ShortUrl {
     private Long id;
 
     @Column(nullable = false)
-    private String originalUrl;
+    public String originalUrl;
 
     @Column(nullable = false, unique = true)
     private String shortCode;
+
+    public String getOriginalUrl() {
+        return this.originalUrl;
+    }
+
+    public String getShortCode() {
+        return shortCode;
+    }
 
     public ShortUrl() {}
 

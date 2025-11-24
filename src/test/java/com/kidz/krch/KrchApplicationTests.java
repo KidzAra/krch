@@ -19,14 +19,12 @@ class KrchApplicationTests {
 
     @Test
     void testAddUrl() {
-
         repo.deleteAll();
 
         String originalUrl = "https://example.com/some/long/url";
 
+        String a = krchApplication.addUrl(originalUrl);
 
-        krchApplication.addUrl(originalUrl);
-
-
+        System.out.println(krchApplication.getUrl(a));
     }
 }
